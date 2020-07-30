@@ -12,7 +12,7 @@ public class Hello {
 
     public static void main(String args[]) {
         String myName = name();
-        System.out.println("Hello " + myName);
+        System.out.println("Hello, " + myName);
     }
 
     /*
