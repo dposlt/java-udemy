@@ -1,0 +1,19 @@
+## description ##
+
+public -> is an access modifier (viditelny pro vsechny tridy)
+static -> method means that is cac be accessed without creating an object of the class, unlike public
+          metoda neni vazana na instanci, ale na tridu, takze je stejna pro vsechny instance, nelze ji v podtride zmenit a nelze v ni pouzit
+          klicove slovo this
+
+instance -> objekt a instance jsou to same. vola se napr Foo foo = new Foo(); vytvorili jsme novou instanci objektu foo,
+            prakticky jde o konstruktor
+konstruktor -> jde o specialni metodu, ktera zjednodusuje naplneni objektu viz instance
+
+void -> je další klíčové slovo v jave, které říká, že metoda nic nevrací (no return)
+
+code block -> is used to define a block of code { }
+
+statement -> this is a complete command to be executed and can include one or more expressions
+             System.out.println("string"); - semicolon end statement, string must be double quotes ""
+
+
