@@ -1,7 +1,7 @@
 ## description ##
 
 public -> is an access modifier (viditelny pro vsechny tridy)
-static -> method means that is cac be accessed without creating an object of the class, unlike public
+static -> method means that is can be accessed without creating an object of the class, unlike public
           metoda neni vazana na instanci, ale na tridu, takze je stejna pro vsechny instance, nelze ji v podtride zmenit a nelze v ni pouzit
           klicove slovo this
 
