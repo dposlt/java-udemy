@@ -2,3 +2,9 @@
 
 package - is a way how to organize project. Companies use own domain name reversed (google.com - com.google)
 
+byte - occupies 8 bites.
+short - occupies 16 bits
+int - intager occupies 32 bits
+long - occupies 64 bits
+
+Point is, that each primitive type occupies a different amount of memory !
