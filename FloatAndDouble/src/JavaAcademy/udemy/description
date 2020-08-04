@@ -1,0 +1,10 @@
+## descrtiption
+
+unlike whole numbers, floating point numbers have fractional parts
+3.14159 is an example
+
+Floating is real numbers
+
+#Single and Double Precision
+single precision occupies 32 bits
+double precision occupies 64 bits
