@@ -53,10 +53,49 @@ public class IfThen {
             System.out.println("This is a car - 2");
 
         if (isCar) //same but with shor record
-            System.out.printf("This is a car - 3");
+            System.out.println("This is a car - 3");
 
         if (!isCar) //isCar == true or isCar != false
-            System.out.printf("This is a car - 4");
+            System.out.println("This is a car - 4");
+
+        // ternary operator
+        isCar = false;
+        boolean wasCar = isCar ? true : false;
+        if (wasCar) {
+            System.out.println("wasCar is a true");
+        }
+
+
+        // challage
+        /*
+                1. create a double variable with value 20.00
+                2. create a second variable of type double with value 80.00
+                3. add both number together and multiply by 100.00
+                4. use the remainder operator to figure out what the raminder from the result of the operations
+                   in step 3 and 40.00. We used the modulus or remainder operator on ints in the course, but we
+                   can also use in on a double
+                5. create a boolean variable that assings the value true if the remainderin #4 is 0, or false if its not zero
+                6. output the boolean variable
+                7. write an if-then statement that displays a message got some remaider if the boolean in
+                   step 5 is not true. Don''t be surprised if you see output for this step, where you might
+                   expect in no to show.
+                */
+
+        double firstVariable = 20.00d;
+        double secondVariable = 80.00d;
+        double multiply = (firstVariable + secondVariable) * 100.00d;
+        multiply %= 40.00d;
+        boolean result = (multiply == 0) ? true : false;
+        System.out.println(result);
+
+        if(!result){
+            System.out.println("got some remainder");
+        }
+
+
+
+
+
     }
     
 }
