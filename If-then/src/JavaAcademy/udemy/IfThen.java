@@ -5,6 +5,8 @@
  */
 package JavaAcademy.udemy;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 /**
  *
  * @author moula
@@ -26,6 +28,14 @@ public class IfThen {
             System.out.println("It's not alien");
             System.out.println("And I am scare aliens!"); //is add becouse is in the block !!!
         }
+
+        int topScore = 80;
+        if (topScore < 100)
+            System.out.println("exam pass");
+
+        int secondTopScore = 81;
+        if (topScore > secondTopScore && topScore < 100)
+            System.out.println("Greater then second top score and less than 100");
     }
     
 }
