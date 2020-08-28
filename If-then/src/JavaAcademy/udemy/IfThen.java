@@ -43,6 +43,20 @@ public class IfThen {
 
         if ((topScore > 90) || (secondTopScore <= 90))
             System.out.println("Either or both of the conditions are true");
+
+        // boolean with if
+        boolean isCar = false;
+        if (isCar == true)
+            System.out.println("This is a car - 1");
+
+        if (isCar = true) // there I am change false on true and this is not wrong boolean is not a variable !!!
+            System.out.println("This is a car - 2");
+
+        if (isCar) //same but with shor record
+            System.out.printf("This is a car - 3");
+
+        if (!isCar) //isCar == true or isCar != false
+            System.out.printf("This is a car - 4");
     }
     
 }
