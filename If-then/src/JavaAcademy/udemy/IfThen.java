@@ -33,9 +33,16 @@ public class IfThen {
         if (topScore < 100)
             System.out.println("exam pass");
 
-        int secondTopScore = 81;
+        // and operand
+        int secondTopScore = 60;
         if (topScore > secondTopScore && topScore < 100)
             System.out.println("Greater then second top score and less than 100");
+
+        if ((topScore > secondTopScore) && (topScore < 100)) //easy for read
+            System.out.println("Greater then second top score and less than 100");
+
+        if ((topScore > 90) || (secondTopScore <= 90))
+            System.out.println("Either or both of the conditions are true");
     }
     
 }
