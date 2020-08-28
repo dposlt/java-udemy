@@ -86,7 +86,7 @@ public class IfThen {
         double multiply = (firstVariable + secondVariable) * 100.00d;
         multiply %= 40.00d;
         boolean result = (multiply == 0) ? true : false;
-        System.out.println(result);
+        System.out.println("isNoRemainder = " + result);
 
         if(!result){
             System.out.println("got some remainder");
