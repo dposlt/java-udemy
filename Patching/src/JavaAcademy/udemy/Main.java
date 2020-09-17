@@ -11,13 +11,13 @@ import javax.swing.*;
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
-        //PrintOwnServers(getName());
-        Window();
+        PrintOwnServers(getName(),workDirectory());
+        //Window();
 
     }
 
-    public static void PrintOwnServers(String name) throws FileNotFoundException  {
-        File file = new File("C:\\Users\\212437054\\Documents\\projects\\udemy\\java\\Patching\\src\\JavaAcademy\\udemy\\source.txt");
+    public static void PrintOwnServers(String name, String workPath) throws FileNotFoundException  {
+        File file = new File(workPath + "/src/JavaAcademy/udemy/source.txt");
         Scanner scan = new Scanner(file);
 
         while(scan.hasNextLine()) {
@@ -38,6 +38,10 @@ public class Main {
         return searchingString;
     }
 
+    public static String workDirectory() {
+        String userDirectory = System.getProperty("user.dir");
+        return userDirectory;
+    }
     public static void Window() {
         JFrame window = new JFrame();
         window.setSize(640,480);
