@@ -42,6 +42,7 @@ public class Main {
         String userDirectory = System.getProperty("user.dir");
         return userDirectory;
     }
+
     public static void Window() {
         JFrame window = new JFrame();
         window.setSize(640,480);
