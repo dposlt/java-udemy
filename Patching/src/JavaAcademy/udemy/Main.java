@@ -35,16 +35,16 @@ public class Main {
         window.add(textField);
 
         JTextArea area = new JTextArea(10,10);
-        //area.setBounds(30, 110, 600,300);
-        //area.setForeground(Color.BLACK);
-        //area.setBackground(Color.gray);
-        //area.setLineWrap(true);
-        //area.setWrapStyleWord(true);
-        //area.setEnabled(false);
-        window.add(area, BorderLayout.CENTER);
+        area.setBounds(30, 110, 600,300);
+        area.setForeground(Color.BLACK);
+        area.setBackground(Color.gray);
+        area.setLineWrap(true);
+        area.setWrapStyleWord(true);
+        area.setEnabled(false);
+        window.add(area);
 
-        JScrollPane sp = new JScrollPane(area, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        window.add(sp);
+        //JScrollPane sp = new JScrollPane(area, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        //window.add(sp);
 
         JButton btn = new JButton();
         btn.setText("Search");
@@ -57,7 +57,7 @@ public class Main {
 
                 area.setText("");
                 String getTextField = textField.getText().toLowerCase();
-                getTextField = getTextField.substring(0,1).toUpperCase()+getTextField.substring(1);
+                getTextField = getTextField.substring(0,1).toUpperCase();//+getTextField.substring(1);
 
                 String[] servers;
                 try {
