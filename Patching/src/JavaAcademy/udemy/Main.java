@@ -21,11 +21,12 @@ public class Main {
         JFrame window = new JFrame();
         window.setSize(700,480);
         window.setTitle("Search your servers ");
+        window.setResizable(false);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel label = new JLabel();
         label.setText("Enter own name or server");
-        label.setBounds(30, 50, 150, 20);
+        label.setBounds(30, 50, 200, 20);
         window.add(label);
 
 
