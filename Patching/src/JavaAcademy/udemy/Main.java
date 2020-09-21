@@ -3,12 +3,13 @@ package JavaAcademy.udemy;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+import java.awt.event.KeyEvent;
 
 public class Main {
 
@@ -16,7 +17,10 @@ public class Main {
         //PrintOwnServers(getName(),workDirectory());
         Window();
 
+
     }
+
+
     public static void Window() {
         JFrame window = new JFrame();
         window.setSize(700,480);
@@ -32,6 +36,7 @@ public class Main {
 
         JTextField textField = new JTextField();
         textField.setBounds(30,70,200,30);
+        //textField.addKeyListener();
         window.add(textField);
 
         JTextArea area = new JTextArea(10,10);
@@ -78,11 +83,6 @@ public class Main {
 
             }
         });
-
-
-
-
-
 
 
         window.setLayout(null);
