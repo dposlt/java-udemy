@@ -35,16 +35,18 @@ public class Main {
         window.add(textField);
 
         JTextArea area = new JTextArea(10,10);
-        area.setBounds(30, 110, 600,300);
+        //area.setBounds(30, 110, 600,300);
         area.setForeground(Color.BLACK);
         area.setBackground(Color.gray);
         area.setLineWrap(true);
         area.setWrapStyleWord(true);
         area.setEnabled(false);
-        window.add(area);
+        //window.add(area);
 
-        //JScrollPane sp = new JScrollPane(area, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        //window.add(sp);
+        JScrollPane sp = new JScrollPane(area);
+        sp.setBounds(30,110,600,300);
+        sp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        window.add(sp);
 
         JButton btn = new JButton();
         btn.setText("Search");
