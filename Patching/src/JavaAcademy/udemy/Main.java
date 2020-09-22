@@ -39,6 +39,7 @@ public class Main {
         //textField.addKeyListener();
         window.add(textField);
 
+
         JTextArea area = new JTextArea(10,10);
         //area.setBounds(30, 110, 600,300);
         area.setForeground(Color.BLACK);
@@ -47,6 +48,7 @@ public class Main {
         area.setWrapStyleWord(true);
         area.setEnabled(false);
         //window.add(area);
+
 
         JScrollPane sp = new JScrollPane(area);
         sp.setBounds(30,110,600,300);
@@ -72,7 +74,8 @@ public class Main {
                     servers = PrintOwnServers(getTextField, workDirectory()).toArray(new String[0]);
 
                     for(int i=0; i < servers.length; i++)
-                        area.append(servers[i]);
+                        area.append(servers[i] + "\n");
+
 
 
 
