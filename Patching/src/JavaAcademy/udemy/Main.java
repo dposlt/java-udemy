@@ -51,7 +51,7 @@ public class Main {
 
 
         JScrollPane sp = new JScrollPane(area);
-        sp.setBounds(30,110,600,300);
+        sp.setBounds(30,110,650,300);
         sp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         window.add(sp);
 
