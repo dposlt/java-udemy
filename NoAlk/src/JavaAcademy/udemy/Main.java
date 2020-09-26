@@ -2,7 +2,6 @@ package JavaAcademy.udemy;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
-import java.sql.SQLOutput;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.io.File;
