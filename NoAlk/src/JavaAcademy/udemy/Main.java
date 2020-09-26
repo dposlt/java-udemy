@@ -33,9 +33,9 @@ public class Main {
 
             System.out.println("File already exists: writing new dates ");
             if(resultsFile.canWrite()) {
-                BufferedWriter writer = new BufferedWriter(new FileWriter(resultsFile));
-                writer.append(date + " status: " + result);
-                writer.append("\n");
+                BufferedWriter writer = new BufferedWriter(new FileWriter(resultsFile, true));
+                writer.append(date + " status: " + result + "\n");
+                //writer.append("\n");
                 writer.close();
             } else {
                 System.out.println("Cannot write to file");
