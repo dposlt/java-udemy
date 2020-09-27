@@ -1,11 +1,8 @@
 package JavaAcademy.udemy;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.io.File;
-import java.io.IOException;
 
 public class Main {
 
@@ -39,6 +36,12 @@ public class Main {
             } else {
                 System.out.println("Cannot write to file");
             }
+
+            BufferedReader reader = new BufferedReader(new FileReader(resultsFile));
+            int lines = 0;
+            while (reader.readLine() != null) lines++;
+            System.out.printf(lines + " : days");
+            reader.close();
 
             } catch (IOException e) {
             e.printStackTrace();
