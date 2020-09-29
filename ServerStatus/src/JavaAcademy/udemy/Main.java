@@ -11,18 +11,22 @@ public class Main {
                 System.out.println("Server is up");
             } else {
                 System.out.println("Server is down");
-        }
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public static boolean ping(String serverName) throws IOException {
+        try {
             InetAddress address = InetAddress.getByName(serverName);
-            //System.out.println(address);
+            System.out.println(address + ":");
             boolean reachable = address.isReachable(10000);
-            if (reachable) return true;
-
+            if (reachable == true) return true;
+        } catch (Exception e) {
             return false;
+        }
+        return false;
+
     }
 }
