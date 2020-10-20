@@ -1,30 +1,415 @@
-
+Patching process of Wintel servers
+SeD WI
+Instalace patchů a restart serverů	 Nr.  10D / 2020
+ alert arrived : 14.10.2020
+ deadline : 22.10.2020
 Milí kolegové,
 
-aktuální patche ještě nebyly nainstalovány na 161 serverech a 9 serverů čeká na restart. Některé patche mohou být k instalaci nabídnuty až po restartu serveru.
+aktuální patche ještě nebyly nainstalovány na 337 serverech a 58 serverů čeká na restart. Některé patche mohou být k instalaci nabídnuty až po restartu serveru.
 
-Deadline vyprší již dnes!
+Připomínám, že deadline vyprší již ve čtvrtek! Proto prosím s aplikací patchů neváhejte.
 
-Seznam serverů, na kterých ještě nebyly nainstalovány všechny patche:
-SERVRSW5VL814009	Poslt David	Poslt David	14,33 GB
-SERVRSW5VL814109	Poslt David		17,66 GB
-SERVRSW0BL0EA001	Poslt David	Poslt David	24,06 GB
-SERVRSW0BL0ITPDC	Poslt David	Poslt David	19,98 GB
-SERVRSW1DL0ITPDC	Poslt David	Poslt David	13,22 GB
-SERVRSW6AL0CRCL1	Poslt David		0 GB
-SERVRSW6AL0CRCL2	Poslt David		0 GB
-SERVRSW6AL0DART1	Poslt David	Poslt David
-SERVRSW6AL0DCEL1	Poslt David		0 GB
-SERVRSW6AL0DCEL2	Poslt David		0 GB
-SERVRSW6AL0DCET1	Poslt David		0 GB
-SERVRSW6AL0DCET2	Poslt David		0 GB
-SERVRSW6AL0EAT01	Poslt David	Poslt David	0 GB
-SERVRSW6AL0IDM01	Poslt David	Poslt David	0 GB
-SERVRSW6AL0IDMP1	Poslt David	Poslt David	0 GB
-SERVRSW6AL0IDMS1	Poslt David	Poslt David
-SERVRSW6AL0IDMS2	Poslt David	Poslt David	0 GB
-SERVRSW6AL0IDMS3	Poslt David	Poslt David	0 GB
-SERVRSW6AL0IDMT1	Poslt David	Poslt David	0 GB
-SERVRSW6AL0IDMT2	Poslt David	Poslt David	0 GB
-SERVRSW6AL0ITEL1	Poslt David	Poslt David	0 GB
-SERVRSW6AL0ITET1	Poslt David	Poslt David	0 GB
+Pro nové kolegy připomínám, že za patchování serverů je zodpovědný aplikační admin serveru (dvě jména za jménem serveru). Číslo na konci řádku uvádí počet volných GB na disku C:.
+Tato hodnota napovídá, zda má smysl se pouštět do patchování nebo požádat o zvýšení velikosti disku. Na serverech s operačním systémem 2016 je nutno mít minimálně 9 GB volného místa na diísku C:,
+aby patchování proběhlo úspěšně. U některých serverů tam může být 0 nebo je pole nevyplněno, protože se tato hodnota nepodařila zjistit (server nejede, je umístěn v DMZ apod.).
+
+MYCZSW1DL015100	Andrlová Pavla	Eisman David	76,06 GB
+MBCZVW0BL0DARQ1	Bača Michal		28,1 GB
+MBCZVW0BL0EA001	Belak Peter	Belak Peter	23,99 GB
+MBCZVW0BL0ITPDC	Belak Peter	Hupka Vladimir	17,66 GB
+MBCZVW1DL0ITPDC	Belak Peter	Hupka Vladimir	11,63 GB
+MBCZVW6AL0CRCL1	Belak Peter		0 GB
+MBCZVW6AL0CRCL2	Belak Peter		0 GB
+MBCZVW6AL0DART1	Belak Peter	Vasicek Michal
+MBCZVW6AL0DCEL1	Belak Peter		0 GB
+MBCZVW6AL0DCEL2	Belak Peter		0 GB
+MBCZVW6AL0DCET1	Belak Peter		0 GB
+MBCZVW6AL0DCET2	Belak Peter		0 GB
+MBCZVW6AL0EAT01	Belak Peter	Privara Petr	0 GB
+MBCZVW6AL0IDM01	Belak Peter	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0IDMP1	Belak Peter	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0IDMS1	Belak Peter	Kratochvíl Ladislav
+MBCZVW6AL0IDMS2	Belak Peter	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0IDMS3	Belak Peter	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0IDMT1	Belak Peter	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0IDMT2	Belak Peter	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0ITEL1	Belak Peter	Vasicek Michal	0 GB
+MBCZVW6AL0ITET1	Belak Peter	Belak Peter	0 GB
+MBCZVW6AL0TTD01	Belak Peter	Smetana Pavel
+MBCZVW6AL0UQT01	Belak Peter		0 GB
+MYCZSW0BD001026	Belak Peter	Belak Peter
+MYCZSW0BL013157	Belak Peter	Belak Peter	24,61 GB
+MYCZSW0BL013211	Belak Peter	Privara Petr	5,27 GB
+MYCZSW0BL015027	Belak Peter	Belak Peter	27,44 GB
+MYCZSW0BL015077	Belak Peter	Belak Peter	33,17 GB
+MYCZSW1DD001021	Belak Peter	Belak Peter
+MYCZSW1DL013021	Belak Peter	Hupka Vladimir	39,05 GB
+MYCZSW1DL013155	Belak Peter	Hupka Vladimir	20,06 GB
+MYCZSW1DL013211	Belak Peter	Privara Petr	4,94 GB
+MYCZSW1DL015027	Belak Peter	Hupka Vladimir	15,42 GB
+MYCZSW1DL015032	Belak Peter	Hupka Vladimir	16,57 GB
+MYCZSW1DL015077	Belak Peter	Belak Peter	31,2 GB
+MBCZVW0BL0TSSAS	Benkovsky Tomas	19,84 GB
+MYCZSW0BL014027	Benkovsky Tomas	Jirak Libor	48,28 GB
+MYCZSW0BL014028	Benkovsky Tomas	Jirak Libor	93,37 GB
+MBCZVW0BD0BIO01	Bina Josef	Polansky Roman
+MBCZVW0BD0LAMD1	Bina Josef	Polansky Roman
+MBCZVW1DD0BIO02	Bina Josef	Polansky Roman
+MBCZVW1DD0BIO03	Bina Josef	Polansky Roman
+MBCZVW1DD0LAMD2	Bina Josef	Polansky Roman
+MYCZSW0BD001027	Bina Josef	Polansky Roman
+MYCZSW0BL015149	Bina Josef	Polansky Roman	5,21 GB
+MYCZSW1DD001013	Bina Josef	Polansky Roman
+MBCZVW1DL0MMP01	Drozen Pavel		5,33 GB
+MBCZVW1DL0VERC1	Drozen Pavel		37,48 GB
+MBCZVW0BL0NAPC1	Eler Karel	Sehnal Petr	29,47 GB
+MBCZVW0BD0MST01	Hanuska Petr	Mikulec Ondrej
+MBCZVW0BL0DSP01	Hanuska Petr	Smetana Pavel	6,05 GB
+MBCZVW0BL0PSPB1	Hanuska Petr	Smetana Pavel	38,86 GB
+MBCZVW0BL0PSPS1	Hanuska Petr	Smetana Pavel	50,5 GB
+MBCZVW1DD0MST02	Hanuska Petr	Mikulec Ondrej
+MBCZVW1DL0PSPB2	Hanuska Petr	Smetana Pavel	38,77 GB
+MBCZVW1DL0PSPS2	Hanuska Petr	Smetana Pavel	51,02 GB
+MBCZVW6ALLAFM01	Hanuska Petr	Poslt David	0 GB
+MBCZVW6ALTAFM01	Hanuska Petr	Poslt David	0 GB
+MYCZSW0BL013058	Hanuska Petr	Zeman Vladimir	8,99 GB
+MYCZSW0BL016098	Hanuska Petr	Poslt David	7,44 GB
+MBCZVW0BL0CMSQ1	Haspl Martin	Keil Ales	67,51 GB
+MBCZVW0BL0SQL01	Haspl Martin	Jirak Libor	13,77 GB
+MBCZVW0BL0SQL02	Haspl Martin	Jirak Libor	32,71 GB
+MBCZVW0BL0SQL03	Haspl Martin	Jirak Libor	13,27 GB
+MBCZVW0BL0SQL04	Haspl Martin	Jirak Libor	18,94 GB
+MBCZVW0BL0SQL07	Haspl Martin	Jirak Libor	18,25 GB
+MBCZVW0BL0SQL08	Haspl Martin	Jirak Libor	15,53 GB
+MBCZVW0BL0SQL09	Haspl Martin	Jirak Libor	22,1 GB
+MBCZVW0BL0SQL11	Haspl Martin	Jirak Libor	61,07 GB
+MBCZVW0BL0SQLT1	Haspl Martin	Jirak Libor	12,61 GB
+MBCZVW0BL0SQLT2	Haspl Martin	Jirak Libor	19,49 GB
+MBCZVW0BL0SQLT3	Haspl Martin	Jirak Libor	33,35 GB
+MBCZVW1DL0CMSQ1	Haspl Martin	Keil Ales	71,78 GB
+MBCZVW1DL0SQL01	Haspl Martin	Jirak Libor	13,17 GB
+MBCZVW1DL0SQL02	Haspl Martin	Jirak Libor	30,1 GB
+MBCZVW1DL0SQL09	Haspl Martin	Jirak Libor	19,67 GB
+MBCZVW6AL0SQL01	Haspl Martin	Jirak Libor	0 GB
+MBCZVW6AL0SQL03	Haspl Martin	Jirak Libor	0 GB
+MBCZVW6AL0SQL51	Haspl Martin	Jirak Libor	0 GB
+MBCZVW6AL0SQLT1	Haspl Martin	Jirak Libor	0 GB
+MYCZSW0BL014215	Haspl Martin	Jirak Libor	38,27 GB
+MYCZSW0BL014217	Haspl Martin	Jirak Libor	43,26 GB
+MYCZSW1DL013183	Holub Miroslav	Hupka Vladimir	19,54 GB
+MBCZVW6AL0BINL1	Horcicka Jaroslav	Horcicka Jaroslav	0 GB
+MBCZVW6AL0BINL2	Horcicka Jaroslav	Horcicka Jaroslav	0 GB
+MBCZVW6AL0BINL3	Horcicka Jaroslav	Horcicka Jaroslav	0 GB
+MBCZVW6AL0BINT1	Horcicka Jaroslav	Horcicka Jaroslav	0 GB
+MYCZSW0BL013230	Horcicka Jaroslav	Horcicka Jaroslav	4,24 GB
+MYCZSW0BL015080	Horcicka Jaroslav	Horcicka Jaroslav	10,83 GB
+MYCZSW5VL801013	Horcicka Jaroslav	Horcicka Jaroslav	3,56 GB
+MBCZVW0BL0FS021	Jancura Petr		18,74 GB
+MBCZVW0BL0FS022	Jancura Petr		22,05 GB
+MBCZVW1DD0JANC1	Jancura Petr
+MBCZVW1DL0FS021	Jancura Petr		21,21 GB
+MBCZVW1DL0FS022	Jancura Petr		17,08 GB
+MBCZVW5VL0FSP01	Jancura Petr		19,35 GB
+MBCZVW5VL0FSP02	Jancura Petr		32,73 GB
+MYCZSW0BL014024	Jancura Petr	Miklik Pavel	11,31 GB
+MBCZSW0BL0PARK0	Jankovsky Jiri		456,66 GB
+MBCZSW3OL0PARK1	Jankovsky Jiri		458,79 GB
+MBCZVW0BL0SFQS1	Jankovsky Jiri	Starosta Petr	46,08 GB
+MBCZVW0BL0SFQS2	Jankovsky Jiri	Starosta Petr	46,56 GB
+MBCZVW1DL0SFQS3	Jankovsky Jiri	Starosta Petr	45,64 GB
+MBCZVW1DL0SFQS4	Jankovsky Jiri	Starosta Petr	46,22 GB
+MBCZVW5VL0PRINT	Jankovsky Jiri	Starosta Petr	60,48 GB
+MBCZVW5VL0SFQ01	Jankovsky Jiri	Starosta Petr	113,8 GB
+MBCZVW5VL0SFQ02	Jankovsky Jiri	Starosta Petr
+MBCZVW5VL0SFQ06	Jankovsky Jiri	Starosta Petr	73,69 GB
+MBCZVW5VL0SFQPS	Jankovsky Jiri	Starosta Petr	16,15 GB
+MYCZSW1DL013100	Jankovsky Jiri	Starosta Petr
+MBCZVW0BL0PACO1	Jaroš Jiří	Ptacnik Tomas	12,26 GB
+MYCZSW0BL014210	Jirak Libor	Haspl Martin	63,19 GB
+MYCZSW0BL014211	Jirak Libor	Haspl Martin	42,06 GB
+MYCZSW0BL014212	Jirak Libor	Haspl Martin	45,75 GB
+MYCZSW0BL014213	Jirak Libor	Haspl Martin	51,67 GB
+MYCZSW0BL014214	Jirak Libor	Haspl Martin	41,08 GB
+MYCZSW1DL016238	Jirak Libor	Haspl Martin	45,16 GB
+MYCZSW1DL016239	Jirak Libor	Haspl Martin	52 GB
+MBCZVW0BL0CAWA1	Jurik Daniel	Brabec Michal	8,89 GB
+MBCZVW0BL0RALI1	Jurik Daniel	Brabec Michal	16,05 GB
+MBCZVW0BL0RALI2	Jurik Daniel	Brabec Michal	8,47 GB
+MBCZVW0BL0RALI3	Jurik Daniel	Brabec Michal	13,56 GB
+MBCZVW0BL0RALI4	Jurik Daniel	Brabec Michal	23,74 GB
+MBCZVW0BL0RWA01	Jurik Daniel	Brabec Michal	4,95 GB
+MBCZVW0BL0SNDL1	Jurik Daniel	Toman Jakub	22,2 GB
+MBCZVW0BL0SNDT1	Jurik Daniel	Toman Jakub	22,09 GB
+MBCZVW0BL0STAR1	Jurik Daniel	Toman Jakub	13,18 GB
+MBCZVW1DL0CAWA2	Jurik Daniel	Brabec Michal	9,81 GB
+MBCZVW1DL0MMPW1	Jurik Daniel	Hertl Jan	26,14 GB
+MBCZVW1DL0PWDW1	Jurik Daniel	Hertl Jan	213,48 GB
+MBCZVW1DL0RAAC1	Jurik Daniel	Hertl Jan	8,24 GB
+MBCZVW1DL0RATS1	Jurik Daniel	Vacek Frantisek	8,45 GB
+MBCZVW1DL0RWA02	Jurik Daniel	Toman Jakub	12,21 GB
+MBCZVW1DL0SNDL2	Jurik Daniel	Toman Jakub	28,59 GB
+MBCZVW0BD0MHAN1	Keil Ales
+MBCZVW0BL0CMP01	Keil Ales	Keil Ales	30,27 GB
+MBCZVW0BL0CMSU1	Keil Ales	Kuhejda Pavel	69,75 GB
+MBCZVW1DL0CMDP2	Keil Ales	Keil Ales	62,8 GB
+MBCZVW1DL0CMDP4	Keil Ales	Keil Ales	74,33 GB
+MBCZVW5VL0CAS04	Keil Ales		27,26 GB
+MBCZVW5VL0CMDP1	Keil Ales	Keil Ales	74,66 GB
+MBCZVW5VL0CMIS1	Keil Ales	Keil Ales	25,71 GB
+MBCZVW5VL0IS001	Keil Ales		62,18 GB
+MBCZVW6AL0CMDP3	Keil Ales	Keil Ales	0 GB
+MYCZSW0BL013077	Khyrova Veronika	Rektorysová Natália	14,89 GB
+MYCZSW1DL013020	Khyrova Veronika	Rektorysová Natália	28,69 GB
+MBCZVW0BL0WIKI1	Kolarik Pavel	Stroff Petr	32,21 GB
+MYCZSW1DL015234	Kolarik Pavel	Stroff Petr	45,19 GB
+MBCZVW0BL000005	Kral Jiri	Kral Jiri	53,09 GB
+MBCZVW0BL000006	Kral Jiri	Kral Jiri	37,81 GB
+MBCZVW1DL0BRGT1	Kral Jiri	Pokorny Jiri	8,3 GB
+MBCZVW1DL0TNGC1	Kral Jiri	Pokorny Jiri	47,3 GB
+MBCZVW5VL000001	Kral Jiri	Pokorny Jiri	21,81 GB
+MBCZVW5VL000002	Kral Jiri	Pokorny Jiri	28,29 GB
+MBCZVW5VL0BCASH	Kral Jiri	Pokorny Jiri	196,92 GB
+MBCZVW5VL0BCT01	Kral Jiri	Pokorny Jiri	53,43 GB
+MYCZSW0BL013159	Kral Jiri	Patocka David	59,94 GB
+MYCZSW0BL013204	Kral Jiri	Pokorny Jiri	10,46 GB
+MYCZSW5VL801021	Kral Jiri	Pokorny Jiri	48,14 GB
+MBCZVW0BL0NTB01	Kratochvíl Ladislav	10,34 GB
+MBCZVW0BL0NTB02	Kratochvíl Ladislav	25,44 GB
+MBCZVW0BL0NTB03	Kratochvíl Ladislav	14,56 GB
+MBCZVW1DL0NTB04	Kratochvíl Ladislav	14,96 GB
+MBCZVW1DL0NTB05	Kratochvíl Ladislav	28,94 GB
+MBCZVW1DL0NTBP1	Kratochvíl Ladislav	33,23 GB
+MBCZVW1DL0NTBP2	Kratochvíl Ladislav	29,82 GB
+MBCZVW1DL0NTBP3	Kratochvíl Ladislav	25,39 GB
+MBCZVW1DL0NTBT1	Kratochvíl Ladislav	18,38 GB
+MBCZVW1DL0NTBT2	Kratochvíl Ladislav	23,02 GB
+MBCZVW1DL0NTBT3	Kratochvíl Ladislav	10,66 GB
+MBCZVW1DL0OCRT1	Kratochvíl Ladislav	8,91 GB
+MBCZVW1DL0OCRT2	Kratochvíl Ladislav	19,87 GB
+MBCZVW6AL0ZENL1	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0ZENL2	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0ZENL3	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0ZENL4	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0ZENT1	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0ZENT2	Kratochvíl Ladislav	0 GB
+MYCZSW0BL015026	Kratochvíl Ladislav	9,74 GB
+MYCZSW1DL015034	Kratochvíl Ladislav	Khyrova Veronika	11,84 GB
+MBCZVW5VL814048	Kudrna Vladimir	Mach Vaclav	5,63 GB
+MBCZVW5VL814148	Kudrna Vladimir	Mach Vaclav	7,88 GB
+MBCZVW0BL0ARC1	Mach Jan	Mach Jan	19,12 GB
+MBCZVW0BL0REPT1	Mach Jan	Mach Jan	6,21 GB
+MBCZVW1DL0DDA01	Mach Jan	Skala Antonín	13,33 GB
+MBCZVW1DL0FRP02	Mach Jan		64,84 GB
+MYCZSW0BL013092	Mach Jan	Skala Antonín	7,18 GB
+MYCZSW0BL013093	Mach Jan	Skala Antonín	14,45 GB
+MBCZVW5VL814044	Mach Vaclav	Kudrna Vladimir	32,01 GB
+MBCZVW5VL814045	Mach Vaclav	Kudrna Vladimir	68,65 GB
+MBCZVW5VL814144	Mach Vaclav	Kudrna Vladimir	56,47 GB
+MBCZVW5VL814145	Mach Vaclav	Kudrna Vladimir	79,15 GB
+MBCZVW5VL814248	Mach Vaclav	Kudrna Vladimir	5,63 GB
+MBCZVW0BL0HTD01	Malkova Stanislava	Fulin Lukas	7,58 GB
+MBCZVW0BL0VSH01	Malkova Stanislava	Khyrova Veronika	10,93 GB
+MBCZVW6AL0HYPT1	Malkova Stanislava	Fulin Lukas	0 GB
+MBCZVW0BL0FTPS1	Miklik Pavel	Kuhejda Pavel	11,5 GB
+MBCZVW0BL0CAPP1	Mikulec Ondrej		20,32 GB
+MBCZVW6ALLBENE1	Mikulec Ondrej		0 GB
+MBCZVW6ALTBENE2	Mikulec Ondrej		0 GB
+MBCZVW0BL0TNG01	Minarik Milan	Volmut Vladimir	6,16 GB
+MBCZVW1DL0TNG01	Minarik Milan	Volmut Vladimir	44,86 GB
+MBCZVW0BL0GRLI1	Mizera Michal	Mizera Michal	22,27 GB
+MYCZSW1DL016102	Mizera Michal	Horcicka Jaroslav	32,19 GB
+MBCZVW0BD02K16D	Nevrkla Miloš
+MBCZVW0BD0MDM01	Nevrkla Miloš	Nevrkla Miloš
+MBCZVW0BD0MDM11	Nevrkla Miloš	Nevrkla Miloš
+MBCZVW0BD0SEG01	Nevrkla Miloš	Schmidt Martin
+MBCZVW0BD1ADFS3	Nevrkla Miloš	Hasek Jiri
+MBCZVW0BL0AAD01	Nevrkla Miloš	Hasek Jiri	10,1 GB
+MBCZVW0BL0AAP01	Nevrkla Miloš		13,43 GB
+MBCZVW0BL0ACC01	Nevrkla Miloš	Hasek Jiri	9,38 GB
+MBCZVW0BL0ADFS1	Nevrkla Miloš		8,98 GB
+MBCZVW0BL0DHCP1	Nevrkla Miloš		8,43 GB
+MBCZVW0BL0IR001	Nevrkla Miloš		14,11 GB
+MBCZVW0BL0KMS01	Nevrkla Miloš	Hasek Jiri	8,83 GB
+MBCZVW0BL0WSUS3	Nevrkla Miloš		15,08 GB
+MBCZVW1DD0MDM02	Nevrkla Miloš	Keil Ales
+MBCZVW1DD0MDM03	Nevrkla Miloš	Keil Ales
+MBCZVW1DD0MDM12	Nevrkla Miloš	Keil Ales
+MBCZVW1DD0MDM13	Nevrkla Miloš	Nevrkla Miloš
+MBCZVW1DD0SEG02	Nevrkla Miloš
+MBCZVW1DD0SEG03	Nevrkla Miloš	Keil Ales
+MBCZVW1DD1ADFS4	Nevrkla Miloš	Hasek Jiri
+MBCZVW1DL0AAP02	Nevrkla Miloš		19,26 GB
+MBCZVW1DL0ACC02	Nevrkla Miloš	Keil Ales	29,43 GB
+MBCZVW1DL0ACC03	Nevrkla Miloš	Keil Ales	24,8 GB
+MBCZVW1DL0ADFS2	Nevrkla Miloš		9,29 GB
+MBCZVW1DL0DHCP2	Nevrkla Miloš		16,7 GB
+MBCZVW1DL0IR002	Nevrkla Miloš		15,3 GB
+MBCZVW1DL0KMS02	Nevrkla Miloš	Hasek Jiri	8,68 GB
+MBCZVW5VL0CA002	Nevrkla Miloš		13,09 GB
+MBCZVW5VL0PWR01	Nevrkla Miloš	Nevrkla Miloš	5,91 GB
+MBCZVW5VL0PXE01	Nevrkla Miloš	Keil Ales	39,95 GB
+MBCZVW5VL0WAC01	Nevrkla Miloš		58,7 GB
+MBCZVW5VL0WINS1	Nevrkla Miloš		0 GB
+MBCZVW0BD0SWA02	Patocka David	Kral Jiri
+MBCZVW0BL0CORL1	Patocka David	Kral Jiri	36,67 GB
+MBCZVW0BL0SWA01	Patocka David	Kral Jiri	25,93 GB
+MBCZVW1DD0SWA02	Patocka David	Kral Jiri
+MBCZVW1DL0SWA01	Patocka David	Kral Jiri	66,45 GB
+MBCZVW5VL0AVQ01	Patocka David	Kral Jiri	61,4 GB
+MBCZVW6AL0AUTL1	Patocka David	Kral Jiri	0 GB
+MBCZVW6AL0CORL1	Patocka David	Kral Jiri	0 GB
+MYCZSW0BD014042	Patocka David	Kral Jiri
+MBCZVW0BL0CCD01	Pihera Miroslav		27,21 GB
+MBCZVW0BL0CCKT1	Pihera Miroslav		27,85 GB
+MBCZVW0BL0CCKT2	Pihera Miroslav		23,01 GB
+MBCZVW0BL0CCKT3	Pihera Miroslav		24,05 GB
+MBCZVW1DL0CCKT4	Pihera Miroslav		11,93 GB
+MBCZVW6AL0BSL01	Pokorny Jiri		0 GB
+MBCZVW6AL0BSL02	Pokorny Jiri		0 GB
+MBCZVW6AL0BST01	Pokorny Jiri		0 GB
+MBCZVW6ALTBCZT1	Pokorny Jiri		0 GB
+MYCZSW0BL013078	Pokorny Jiri	Charousek Vaclav	13,97 GB
+MYCZSW5VL801027	Pokorny Jiri	Rys Petr	22,69 GB
+MBCZVW0BL0ABC01	Potempa Ales		11,86 GB
+MBCZVW0BD0GESM1	Prokop Jan	Smetana Pavel
+MBCZVW0BL0GEGM1	Prokop Jan	Smetana Pavel	35,9 GB
+MBCZVW1DD0GESM2	Prokop Jan	Smetana Pavel
+MBCZVW1DL0GEGM2	Prokop Jan	Smetana Pavel	38,02 GB
+MBCZVW0BL0EPV01	Psenicka Pavel		57,81 GB
+MBCZVW1DL02K12S	Psenicka Pavel		4,56 GB
+MBCZVW1DL0EPV02	Psenicka Pavel		55,42 GB
+MBCZVW6AL02K16S	Psenicka Pavel		0 GB
+MBCZVW6AL02K19S	Psenicka Pavel
+MYCZSW0BL016015	Psenicka Pavel	Psenicka Pavel	7,93 GB
+MYCZSW0BL016094	Psenicka Pavel		5,7 GB
+MYCZSW1DL015022	Psenicka Pavel		7,31 GB
+MYCZSW1DL015190	Psenicka Pavel	Psenicka Pavel	20,04 GB
+MYCZSW0BL014022	Ptacnik Tomas	Urban Frantisek	54,88 GB
+MYCZSW0BL015155	Ptacnik Tomas	Urban Frantisek	19,62 GB
+MBCZVW1DL0UFHST	Rada Martin		27,68 GB
+MYCZSW0BL013101	Rada Martin	Tybl Miroslav	4,81 GB
+MYCZSW0BL016120	Rada Martin	Tybl Miroslav	2,22 GB
+MYCZSW0BL016121	Rada Martin	Tybl Miroslav	9,36 GB
+MYCZSW1DL013120	Rada Martin	Tybl Miroslav	5,53 GB
+MYCZSW1DL013121	Rada Martin	Tybl Miroslav	18,92 GB
+MBCZVW0BD0BKON1	Ratka Daniel	Kovacs Alexandr
+MBCZVW0BL0BANKE	Ratka Daniel	Kovacs Alexandr	14,08 GB
+MBCZVW0BL0BKME1	Ratka Daniel	Kovacs Alexandr	40,82 GB
+MBCZVW0BL0BKOF1	Ratka Daniel	Kovacs Alexandr	40,64 GB
+MBCZVW0BL0MC001	Ratka Daniel	Kovacs Alexandr	6,24 GB
+MBCZVW0BL0MC003	Ratka Daniel	Kovacs Alexandr	26,83 GB
+MBCZVW1DD0BKON2	Ratka Daniel	Kovacs Alexandr
+MBCZVW1DL0BKFVE	Ratka Daniel	Kovacs Alexandr	17,22 GB
+MBCZVW1DL0BKPPE	Ratka Daniel	Kovacs Alexandr	38,27 GB
+MBCZVW1DL0BTST3	Ratka Daniel	Kovacs Alexandr	38,82 GB
+MBCZVW1DL0TSL01	Ratka Daniel	Kovacs Alexandr	30,56 GB
+MBCZVW6AL0BKT01	Ratka Daniel	Kovacs Alexandr	0 GB
+MBCZVW6AL0MCBP1	Ratka Daniel	Kovacs Alexandr	0 GB
+MBCZVW6AL0MCBT1	Ratka Daniel	Kovacs Alexandr	0 GB
+MBCZVW6AL0MCGL1	Ratka Daniel	Kovacs Alexandr	0 GB
+MYCZSW0BL013090	Ratka Daniel	Kovacs Alexandr	22,52 GB
+MBCZVW0BL0TNGC1	Rys Petr	Pokorny Jiri	45,93 GB
+MBCZVW0BL0Q6041	Seibert Michal		19,22 GB
+MBCZVW0BL0PENT1	Schmidt Martin		15,37 GB
+MBCZVW0BL0VSC01	Schmidt Martin		13,31 GB
+MBCZVW5VL0TST01	Schmidt Martin		14,45 GB
+MBCZVW6ALDTST01	Schmidt Martin		0 GB
+MBCZVW6AL0SAGSL	Skola Petr	Kovacs Alexandr	0 GB
+MBCZVW6AL0SAGST	Skola Petr	Kovacs Alexandr	0 GB
+MBCZVW0BL0BAK01	Smiesko Radovan	12,32 GB
+MBCZVW0BD0RSA03	Starosta Petr	Horak Josef
+MBCZVW0BL0PLAT1	Starosta Petr	Horak Josef	16,96 GB
+MBCZVW1DD0RSA04	Starosta Petr	Horak Josef
+MYCZSW1DL013073	Starosta Petr	Horak Josef	4,59 GB
+MYCZSW5VL801029	Starosta Petr	Horak Josef	32,5 GB
+MYCZSW0BL013046	Téra Jakub	Mikulec Ondrej	4,97 GB
+MYCZSW0BL013190	Téra Jakub	Mikulec Ondrej	7,89 GB
+MYCZSW0BL015150	Téra Jakub	Mikulec Ondrej	5,9 GB
+MYCZSW1DL015139	Téra Jakub	Mikulec Ondrej	7,17 GB
+MBCZVW0BD0MIG01	Vasicek Michal	Tybl Miroslav
+MBCZVW0BL0K2B01	Vasicek Michal	Tybl Miroslav	151,25 GB
+MBCZVW0BL0WKON1	Vasicek Michal	Belak Peter	7,96 GB
+MBCZVW1DD0MIG02	Vasicek Michal	Tybl Miroslav
+MBCZVW1DD0MIG03	Vasicek Michal
+MBCZVW1DL0KOMT1	Vasicek Michal	Belak Peter	3,47 GB
+MBCZVW6AL0ARCL1	Vasicek Michal	Vasicek Michal	0 GB
+MBCZVW6AL0ARCL2	Vasicek Michal	Vasicek Michal	0 GB
+MBCZVW6AL0EAR01	Vasicek Michal	Tybl Miroslav	0 GB
+MBCZVW6AL0EAR02	Vasicek Michal		0 GB
+MBCZVW6AL0EARC1	Vasicek Michal		0 GB
+MBCZVW6AL0EMCA1	Vasicek Michal	Tybl Miroslav	0 GB
+MBCZVW6AL0EMCAP	Vasicek Michal	Tybl Miroslav	0 GB
+MBCZVW6AL0EMCAT	Vasicek Michal	Tybl Miroslav	0 GB
+MBCZVW6AL0MIG01	Vasicek Michal	Tybl Miroslav	0 GB
+MBCZVW6ALLEWFM1	Vasicek Michal		0 GB
+MYCZSW0BL016190	Vasicek Michal	Belak Peter	30 GB
+MYCZSW0BL016191	Vasicek Michal	Belak Peter	3,55 GB
+MYCZSW1DL016152	Vasicek Michal	Belak Peter	6,61 GB
+MYCZSW0BL015068	Vejrek Martin	Polansky Roman	4,32 GB
+MYCZSW0BL016028	Vejrek Martin	Polansky Roman	5,15 GB
+MYCZSW1DL015025	Vejrek Martin	Polansky Roman	8,51 GB
+MYCZSW0BL015222	Volmut Vladimir	Minarik Milan	8,56 GB
+MYCZSW1DL015068	Volmut Vladimir	Minarik Milan	6,09 GB
+
+Seznam serverů čekajících na restart:
+MBCZVW6AL0EAT01	Belak Peter	Privara Petr	0 GB
+MBCZVW6AL0IDM01	Belak Peter	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0IDMP1	Belak Peter	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0IDMS2	Belak Peter	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0IDMS3	Belak Peter	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0IDMT1	Belak Peter	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0IDMT2	Belak Peter	Kratochvíl Ladislav	0 GB
+MYCZSW0BL013211	Belak Peter	Privara Petr	5,27 GB
+MYCZSW0BL015077	Belak Peter	Belak Peter	33,07 GB
+MYCZSW1DL013211	Belak Peter	Privara Petr	4,94 GB
+MYCZSW1DL015077	Belak Peter	Belak Peter	31,19 GB
+MYCZSW0BL015149	Bina Josef	Polansky Roman	5,2 GB
+MBCZVW1DL0MMP01	Drozen Pavel		5,33 GB
+MBCZVW1DL0VERC1	Drozen Pavel		37,48 GB
+MBCZVW0BL0SMTP2	Hasek Jiri		10,88 GB
+MYCZSW1DL013183	Holub Miroslav	Hupka Vladimir	19,54 GB
+MBCZVW5VL0CAS04	Keil Ales		27,26 GB
+MBCZVW5VL0IS001	Keil Ales		62,18 GB
+MBCZVW0BL0NTB02	Kratochvíl Ladislav	25,44 GB
+MBCZVW0BL0NTB03	Kratochvíl Ladislav	14,56 GB
+MBCZVW1DL0NTB04	Kratochvíl Ladislav	14,96 GB
+MBCZVW1DL0NTB05	Kratochvíl Ladislav	28,95 GB
+MBCZVW1DL0NTBP2	Kratochvíl Ladislav	29,82 GB
+MBCZVW1DL0NTBP3	Kratochvíl Ladislav	25,39 GB
+MBCZVW1DL0NTBT1	Kratochvíl Ladislav	18,37 GB
+MBCZVW1DL0NTBT2	Kratochvíl Ladislav	23,02 GB
+MBCZVW1DL0NTBT3	Kratochvíl Ladislav	10,6 GB
+MBCZVW1DL0OCRT1	Kratochvíl Ladislav	8,96 GB
+MBCZVW1DL0OCRT2	Kratochvíl Ladislav	19,87 GB
+MBCZVW6AL0ZENL1	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0ZENL3	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0ZENL4	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0ZENT1	Kratochvíl Ladislav	0 GB
+MBCZVW6AL0ZENT2	Kratochvíl Ladislav	0 GB
+MYCZSW1DL015034	Kratochvíl Ladislav	Khyrova Veronika	11,88 GB
+MBCZVW6AL0BSL02	Pokorny Jiri		0 GB
+MBCZVW0BD0GESM1	Prokop Jan	Smetana Pavel
+MBCZVW0BL0GEGM1	Prokop Jan	Smetana Pavel	35,9 GB
+MBCZVW1DD0GESM2	Prokop Jan	Smetana Pavel
+MBCZVW1DL0GEGM2	Prokop Jan	Smetana Pavel	38,02 GB
+MBCZVW0BD0BKON1	Ratka Daniel	Kovacs Alexandr
+MBCZVW0BL0BANKE	Ratka Daniel	Kovacs Alexandr	14,08 GB
+MBCZVW0BL0BKME1	Ratka Daniel	Kovacs Alexandr	40,82 GB
+MBCZVW0BL0BKOF1	Ratka Daniel	Kovacs Alexandr	40,64 GB
+MBCZVW0BL0MC001	Ratka Daniel	Kovacs Alexandr	6,24 GB
+MBCZVW0BL0MC003	Ratka Daniel	Kovacs Alexandr	26,83 GB
+MBCZVW1DD0BKON2	Ratka Daniel	Kovacs Alexandr
+MBCZVW1DL0BKFVE	Ratka Daniel	Kovacs Alexandr	17,22 GB
+MBCZVW1DL0BKPPE	Ratka Daniel	Kovacs Alexandr	38,27 GB
+MBCZVW1DL0BTST3	Ratka Daniel	Kovacs Alexandr	38,82 GB
+MBCZVW1DL0TSL01	Ratka Daniel	Kovacs Alexandr	30,56 GB
+MBCZVW6AL0BKT01	Ratka Daniel	Kovacs Alexandr	0 GB
+MBCZVW6AL0MCGL1	Ratka Daniel	Kovacs Alexandr	0 GB
+MYCZSW0BL013090	Ratka Daniel	Kovacs Alexandr	22,52 GB
+MBCZVW6AL0SAGSL	Skola Petr	Kovacs Alexandr	0 GB
+MYCZSW0BL015068	Vejrek Martin	Polansky Roman	4,32 GB
+MYCZSW0BL016028	Vejrek Martin	Polansky Roman	5,15 GB
+MBCZVW6AL0IWHL2	Vyvadil Jan	Jaroš Antonín	0 GB
+
+
+Classification: MONETA Internal

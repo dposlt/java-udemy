@@ -66,12 +66,12 @@ public class Main {
 
                 area.setText("");
                 String getTextField = textField.getText().toLowerCase();
-                getTextField = getTextField.substring(0,1).toUpperCase();//+getTextField.substring(1);
+                //getTextField = getTextField.substring(0,1).toUpperCase();//+getTextField.substring(1);
 
                 String[] servers;
                 try {
 
-                    servers = PrintOwnServers(getTextField, workDirectory()).toArray(new String[0]);
+                    servers = PrintOwnServers(getName(getTextField), workDirectory()).toArray(new String[0]);
 
                     for(int i=0; i < servers.length; i++)
                         area.append(servers[i] + "\n");
@@ -107,11 +107,11 @@ public class Main {
         return servers;
     }
 
-    public static String getName() {
-        Scanner searchString = new Scanner(System.in);
-        System.out.println("Enter string you are search: ");
+    public static String getName(String searchingString) {
+        //Scanner searchString = new Scanner(System.in);
+        //System.out.println("Enter string you are search: ");
 
-        String searchingString = searchString.nextLine().toLowerCase();
+        //searchingString = searchString.nextLine().toLowerCase();
         searchingString = searchingString.substring(0,1).toUpperCase()+searchingString.substring(1);
         return searchingString;
     }
