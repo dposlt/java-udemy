@@ -6,11 +6,10 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        showMenu();
+        make(Integer.parseInt(showMenu()));
     }
 
-    public static void showMenu() {
+    public static String showMenu() {
         String znak = "#";
 
         int i;
@@ -20,10 +19,17 @@ public class Main {
 
         System.out.println("\n 1 - status \n 2 - app bbc -> drc \n 3 - db bbc -> drc \n 4 - app drc -> bbc \n 5 - db drc -> bbc");
 
-        System.out.println("Zvol task: ");
+        System.out.printf("Zvol task: ");
         Scanner choice = new Scanner(System.in);
-        choice.nextLine();
+        return choice.next();
+    }
 
-
+    public static boolean  make(int choice) {
+        try {
+            System.out.println("tva volba: " + choice);
+        }
+        catch (NumberFormatException ex) {
+            return false;
+        }
     }
 }
