@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(showMenu());
+        int volba = showMenu();
+        volba(volba);
     }
 
     public static int showMenu() {
@@ -29,5 +30,11 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int menuNumber = scan.nextInt();
         return menuNumber;
+    }
+
+    public static void kontrola(int volba) {
+        if(volba > 6) {
+            System.out.println("Zadej volbu podle menu 1 - 6");
+        }
     }
 }
