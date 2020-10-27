@@ -1,5 +1,6 @@
 package JavaAcademy.udemy;
 import java.sql.SQLOutput;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -7,17 +8,13 @@ public class Main {
 
     public static void main(String[] args) {
         int volba = showMenu();
-        volba(volba);
+        if(kontrola(volba)) {
+            System.out.println("vse je ok");
+        }
     }
 
     public static int showMenu() {
-        /*
-        String znak = "#";
-        int i;
-        for(i=0; i<=20; i++) System.out.printf(znak);
-        System.out.println("\n B I N F -- M E N U");
-        for(i=0; i<=20; i++) System.out.printf(znak);
-        */
+
         System.out.println("###################### \n" +
                 "#                    # \n" +
                 "# B I N F -- M E N U # \n" +
@@ -28,13 +25,26 @@ public class Main {
 
         System.out.printf("Zvol task: ");
         Scanner scan = new Scanner(System.in);
-        int menuNumber = scan.nextInt();
-        return menuNumber;
+        boolean flag = false;
+
+        do {
+            try {
+                int menuNumber = scan.nextInt();
+                flag = true;
+                return menuNumber;
+
+            } catch (InputMismatchException exception) {
+                System.out.println("Integers only, please.");
+
+            }
+        }
+        while (flag);
     }
 
-    public static void kontrola(int volba) {
-        if(volba > 6) {
-            System.out.println("Zadej volbu podle menu 1 - 6");
+    public static boolean  kontrola(int volba) {
+        if(volba <= 6 ) {
+            return true;
         }
+        return false;
     }
 }
