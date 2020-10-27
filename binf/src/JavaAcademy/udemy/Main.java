@@ -39,6 +39,7 @@ public class Main {
             }
         }
         while (flag);
+        return 0;
     }
 
     public static boolean  kontrola(int volba) {
