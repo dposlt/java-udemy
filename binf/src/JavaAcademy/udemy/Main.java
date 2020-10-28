@@ -4,12 +4,16 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
+
 public class Main {
 
     public static void main(String[] args) {
         int volba = showMenu();
-        if(kontrola(volba)) {
+
+        if((volba > 0) && (volba <= 6)) {
             System.out.println("vse je ok");
+        } else {
+            System.out.println("Zadejte spravne cislo tasku");
         }
     }
 
@@ -35,6 +39,7 @@ public class Main {
 
             } catch (InputMismatchException exception) {
                 System.out.println("Integers only, please.");
+                System.exit(0);
 
             }
         }
@@ -42,10 +47,8 @@ public class Main {
         return 0;
     }
 
-    public static boolean  kontrola(int volba) {
-        if(volba <= 6 ) {
-            return true;
-        }
-        return false;
+    public static void ExitToProgram() {
+        System.exit(0);
     }
+
 }
